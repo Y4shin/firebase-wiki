@@ -3,6 +3,8 @@
   import {auth} from "$lib/firebase";
   import {onAuthStateChanged} from "firebase/auth";
   import {onMount} from "svelte";
+  import {v4 as uuidv4} from "uuid";
+  import {showNotification} from "$lib/notification";
 
   var uid: string | null = null;
   var loggedIn: boolean = false;

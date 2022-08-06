@@ -20,13 +20,10 @@ module.exports = {
   ignorePatterns: [
     "/lib/**/*", // Ignore built files.
   ],
-  plugins: [
-    "@typescript-eslint",
-    "import",
-  ],
+  plugins: ["@typescript-eslint", "import"],
   rules: {
-    "indent": ["error", 2],
-    "quotes": ["error", "double"],
+    quotes: ["error", "double"] /* eslint quote-props: 0 */,
+    indent: ["error", 2],
     "import/no-unresolved": 0,
   },
 };

@@ -17,13 +17,14 @@
   >
     <a
       href="/"
-      class="flex justify-around py-2 {currentPage === 'home'
+      class="flex justify-around py-2 rounded-l-md {currentPage === 'home'
         ? 'bg-p-pri-lgt-hgl dark:bg-p-pri-drk-hgl'
         : 'hover:bg-p-pri-lgt-hgl hover:dark:bg-p-pri-drk-hgl transition-colors duration-300'}"
     >
-      <span class="align-middle justify-center inline-block p-2 h-10 w-10">
-        <FaHome />
-      </span>
+    <div class="flex justify-center items-center flex-col">
+      <div class=" inline-block h-8 w-8 mb-2"><FaHome /></div>
+      <p class="text-xs">Home</p>
+    </div>
     </a>
     <a
       href="#"
@@ -31,9 +32,10 @@
         ? 'bg-p-pri-lgt-hgl dark:bg-p-pri-drk-hgl'
         : 'hover:bg-p-pri-lgt-hgl hover:dark:bg-p-pri-drk-hgl transition-colors duration-300'}"
     >
-      <span class=" align-middle justify-center inline-block p-2 h-10 w-10">
-        <FaNewspaper />
-      </span>
+      <div class="flex justify-center items-center flex-col">
+        <div class=" inline-block h-8 w-8 mb-2"><FaNewspaper /></div>
+        <p class="text-xs">Posts</p>
+      </div>
     </a>
     <a
       href="#"
@@ -41,9 +43,10 @@
         ? 'bg-p-pri-lgt-hgl dark:bg-p-pri-drk-hgl'
         : 'hover:bg-p-pri-lgt-hgl hover:dark:bg-p-pri-drk-hgl transition-colors duration-300'}"
     >
-      <span class=" align-middle justify-center inline-block p-2 h-10 w-10">
-        <FaBook />
-      </span>
+      <div class="flex justify-center items-center flex-col">
+        <div class=" inline-block h-8 w-8 mb-2"><FaBook /></div>
+        <p class="text-xs">Wiki</p>
+      </div>
     </a>
     {#if loggedIn}
       <a
@@ -52,9 +55,10 @@
           ? 'bg-p-pri-lgt-hgl dark:bg-p-pri-drk-hgl'
           : 'hover:bg-p-pri-lgt-hgl hover:dark:bg-p-pri-drk-hgl transition-colors duration-300'}"
       >
-        <span class=" align-middle justify-center inline-block p-2 h-10 w-10">
-          <FaPortrait />
-        </span>
+      <div class="flex justify-center items-center flex-col">
+        <div class=" inline-block h-8 w-8 mb-2"><FaPortrait /></div>
+        <p class="text-xs">Profile</p>
+      </div>
       </a>
     {:else}<a
         href="/login"
@@ -62,9 +66,10 @@
           ? 'bg-p-pri-lgt-hgl dark:bg-p-pri-drk-hgl'
           : 'hover:bg-p-pri-lgt-hgl hover:dark:bg-p-pri-drk-hgl transition-colors duration-300'}"
       >
-        <span class=" align-middle justify-center inline-block p-2 h-10 w-10">
-          <FaDoorOpen />
-        </span>
+      <div class="flex justify-center items-center flex-col">
+        <div class=" inline-block h-8 w-8 mb-2"><FaDoorOpen /></div>
+        <p class="text-xs">Login</p>
+      </div>
       </a>
     {/if}
   </div>

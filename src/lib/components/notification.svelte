@@ -17,7 +17,7 @@
 
 <div
   on:click={close}
-  class="flex border-t-reg-lgt dark:border-t-reg-drk text-sm text-t-reg-lgt dark:text-t-reg-drk rounded-md bg-p-suc-lgt {type ===
+  class="flex items-center border-t-reg-lgt dark:border-t-reg-drk text-sm text-t-reg-lgt dark:text-t-reg-drk rounded-md bg-p-suc-lgt {type ===
   'success'
     ? 'bg-p-suc-lgt dark:bg-p-suc-drk'
     : ''} {type === 'error' ? 'bg-p-fal-lgt dark:bg-p-fal-drk' : ''} {type ===
@@ -25,7 +25,7 @@
     ? 'bg-p-inf-lgt dark:bg-p-inf-drk'
     : ''} {type === 'warning' ? 'bg-p-war-lgt dark:bg-p-war-drk' : ''}"
 >
-  <div class="inline-block w-18 h-10 pr-8 my-4 ml-4">
+  <div class="inline-block w-10 h-10 mr-4 my-2 ml-2 md:mr-8 md:my-4 md:ml-4">
     {#if type === "success"}
       <GoCheck />
     {:else if type === "error"}
@@ -37,10 +37,9 @@
     {/if}
   </div>
   <span class="sr-only" />
-  <div class="px-4 my-4">
-    {message}
-  </div>
-  <div class="inline-block w-18 h-10 pl-8 my-4 mr-4">
+  <p class="px-4 my-4">{message}
+  </p>
+  <div class="inline-block w-10 h-10 ml-4 my-2 mr-2 md:ml-8 md:my-4 md:mr-4">
     <div class="rounded-full w-10 h-10 cursor-pointer {type ===
       'success'
         ? 'bg-p-suc-lgt-hgl dark:bg-p-suc-drk-hgl'

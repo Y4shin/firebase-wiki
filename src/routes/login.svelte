@@ -2,6 +2,7 @@
   import {routeUp, currentItem, userData} from "$lib/stores";
   import {showNotification} from "$lib/notification";
   import {auth, db} from "$lib/firebase";
+  import {v4 as uuidv4} from "uuid";
   import {onAuthStateChanged, signInWithEmailAndPassword} from "firebase/auth";
   import {collection, doc, getDoc} from "firebase/firestore";
   import {onMount} from "svelte";
@@ -20,12 +21,15 @@
 
   const login = async () => {
     if (email.length === 0 || password.length === 0) {
-      showNotification({type: "warning", message: "Email and password are required"});
+      showNotification({
+        type: "warning",
+        message: "Email and password are required",
+        id: uuidv4(),
+      });
       return;
     }
     try {
       const userObj = await signInWithEmailAndPassword(auth, email, password);
-      console.log(userObj.user.uid);
       const profileCollection = collection(db, "profile");
       const profileDoc = doc(profileCollection, userObj.user.uid);
       const profile = await getDoc(profileDoc);
@@ -33,33 +37,41 @@
       userData.set({
         name: profileData?.name || "",
       });
-      showNotification({
-        type: "success",
-        message: `Logged in successfully as ${
-          profileData?.name || ""
-        }. You will be redirected to the home page shortly.`,
-      }, 3500);
+      showNotification(
+        {
+          type: "success",
+          message: `Logged in successfully as ${
+            profileData?.name || ""
+          }. You will be redirected to the home page shortly.`,
+          id: uuidv4(),
+        },
+        3500,
+      );
       window.location.href = "/";
     } catch (error: any) {
       if (error.code === "auth/invalid-email") {
         showNotification({
           type: "error",
           message: "Invalid email address",
+          id: uuidv4(),
         });
       } else if (error.code === "auth/user-not-found") {
         showNotification({
           type: "error",
           message: "User not found",
+          id: uuidv4(),
         });
       } else if (error.code === "auth/wrong-password") {
         showNotification({
           type: "error",
           message: "Wrong password",
+          id: uuidv4(),
         });
       } else {
         showNotification({
           type: "error",
           message: "An error occurred",
+          id: uuidv4(),
         });
       }
     }

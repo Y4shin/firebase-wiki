@@ -3,24 +3,28 @@ import {writable, type Writable} from "svelte/store";
 export type NotificationData = {
   message: string;
   type: "success" | "error" | "info" | "warning";
+  id: string;
 };
 
-export const notification: Writable<NotificationData | null> = writable(null);
+export const notification: Writable<NotificationData[]> = writable([]);
 
-export const dismissNotificationIn = async (ms: number) => {
+export const dismissNotification = (id: string) => {
+  notification.update((notifications) => notifications.filter((val) => val.id !== id));
+}
+export const dismissNotificationIn = async (id: string, ms: number) => {
   setTimeout(() => {
-    notification.set(null);
+    dismissNotification(id);
   }, ms + 400);
   await new Promise(resolve => setTimeout(resolve, ms + 400));
 }
 
 export const showNotification = async (data: NotificationData, dismissIn?: number) => {
-  notification.set(data);
-  if (dismissIn) {
-    await dismissNotificationIn(dismissIn);
-  }
-}
+  notification.update((val) => {
+    val.push(data);
+    return val;
+  });
 
-export const dismissNotification = () => {
-  notification.set(null);
+  if (dismissIn) {
+    await dismissNotificationIn(data.id, dismissIn);
+  }
 }
