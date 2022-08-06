@@ -13,3 +13,10 @@ export const notification: Writable<{
 export const userData: Writable<{
   name: string;
 } | null> = writable(null);
+
+export const dismissNotificationIn = async (ms: number) => {
+  setTimeout(() => {
+    notification.set(null);
+  }, ms + 400);
+  await new Promise(resolve => setTimeout(resolve, ms + 400));
+}

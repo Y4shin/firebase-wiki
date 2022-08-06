@@ -1,6 +1,6 @@
 <script lang="ts">
   import FaBookOpen from "svelte-icons/fa/FaBookOpen.svelte";
-  import FaChevronLeft from "svelte-icons/fa/FaChevronLeft.svelte";
+  import FaChevronLeft from "svelte-icons/go/GoChevronLeft.svelte";
 
   export var loggedIn: boolean;
   export var currentPage: "home" | "posts" | "wiki" | "profile" | "login";
@@ -12,7 +12,7 @@
 >
   <div class="relative flex flex-row justify-between align-middle items-center">
     <div class="p-0 align-middle">
-      <a href="{backLink}" class=" align-middle inline-block p-2 h-10 w-10 mr-4 hover:text-t-reg-lgt-hgl hover:dark:text-t-reg-drk-hgl transition-colors duration-300">
+      <a href="{backLink}" class="{currentPage==="home" ? "invisible ": ""}align-middle inline-block p-2 h-10 w-10 mr-4 hover:text-t-reg-lgt-hgl hover:dark:text-t-reg-drk-hgl transition-colors duration-300">
         <FaChevronLeft />
       </a>
       <div
