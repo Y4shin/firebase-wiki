@@ -8,7 +8,7 @@
 </script>
 
 <nav
-  class="w-auto py-4 px-4 md:px-8 m-4 rounded-md bg-p-pri-lgt dark:bg-p-pri-drk text-t-reg-lgt dark:text-t-reg-drk"
+  class="msm:hidden w-auto py-4 px-4 md:px-8 m-4 rounded-md bg-p-pri-lgt dark:bg-p-pri-drk text-t-reg-lgt dark:text-t-reg-drk"
 >
   <div class="relative flex flex-row justify-between align-middle items-center">
     <div class="p-0 align-middle">
