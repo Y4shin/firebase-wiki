@@ -77,3 +77,4 @@ node_modules
 src/lib/firebaseCredentials.ts
 public
 firebase_cred.json
+.firebaselocal
