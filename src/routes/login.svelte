@@ -69,16 +69,16 @@
 </script>
 
 <div class="bg-p-pri-lgt dark:bg-p-pri-drk rounded-md p-4">
-  <div class="flex flex-row msm:mx-4 md:mx-10 mb-6 items-center">
-    <span class="basis-1/4 text-lg">E-Mail</span>
+  <div class="flex msm:flex-col md:flex-row msm:mx-4 md:mx-10 mb-6 items-center">
+    <span class="basis-1/4 text-lg msm:mb-2">E-Mail</span>
     <input
       type="email"
       class="basis-3/4 rounded-md bg-p-bgr-lgt dark:bg-p-pri-drk-hgl px-4 h-10 text-lg"
       bind:value={email}
     />
   </div>
-  <div class="flex flex-row msm:mx-10 my-6 items-center">
-    <span class="basis-1/4 text-lg">Password</span>
+  <div class="flex msm:flex-col md:flex-row msm:mx-10 my-6 items-center">
+    <span class="basis-1/4 text-lg msm:mb-2">Password</span>
     <input
       type="password"
       class="basis-3/4 rounded-md bg-p-bgr-lgt dark:bg-p-pri-drk-hgl px-4 h-10 text-lg"
