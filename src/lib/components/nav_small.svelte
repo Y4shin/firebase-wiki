@@ -38,7 +38,7 @@
       </div>
     </a>
     <a
-      href="#"
+      href="/wiki"
       class="flex justify-around py-2 {currentPage === 'wiki'
         ? 'bg-p-pri-lgt-hgl dark:bg-p-pri-drk-hgl'
         : 'hover:bg-p-pri-lgt-hgl hover:dark:bg-p-pri-drk-hgl transition-colors duration-300'}"

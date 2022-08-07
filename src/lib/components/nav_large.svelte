@@ -28,7 +28,7 @@
       <a href="#" class="text-t-reg-lgt dark:text-t-reg-drk mx-2 lg:mr-4 {currentPage === 'posts' ? 'text-t-reg-lgt-hgl dark:text-t-reg-drk-hgl' : 'hover:text-t-reg-lgt-hgl hover:dark:text-t-reg-drk-hgl transition-colors duration-300'}"
         >Posts</a
       >
-      <a href="#" class="text-t-reg-lgt dark:text-t-reg-drk mx-2 lg:mr-4 {currentPage === 'wiki' ? 'text-t-reg-lgt-hgl dark:text-t-reg-drk-hgl' : 'hover:text-t-reg-lgt-hgl hover:dark:text-t-reg-drk-hgl transition-colors duration-300'}"
+      <a href="/wiki" class="text-t-reg-lgt dark:text-t-reg-drk mx-2 lg:mr-4 {currentPage === 'wiki' ? 'text-t-reg-lgt-hgl dark:text-t-reg-drk-hgl' : 'hover:text-t-reg-lgt-hgl hover:dark:text-t-reg-drk-hgl transition-colors duration-300'}"
         >Wiki</a
       >
       {#if loggedIn}

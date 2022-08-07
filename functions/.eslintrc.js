@@ -25,5 +25,6 @@ module.exports = {
     quotes: ["error", "double"] /* eslint quote-props: 0 */,
     indent: ["error", 2],
     "import/no-unresolved": 0,
+    "max-len": ["error", {code: 120}],
   },
 };

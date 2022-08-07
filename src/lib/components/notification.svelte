@@ -36,16 +36,20 @@
       <GoAlert />
     {/if}
   </div>
-  <span class="sr-only" />
-  <p class="px-4 my-4">{message}
-  </p>
+  <p class="px-4 my-4">{message}</p>
   <div class="inline-block w-10 h-10 ml-4 my-2 mr-2 md:ml-8 md:my-4 md:mr-4">
-    <div class="rounded-full w-10 h-10 cursor-pointer {type ===
-      'success'
+    <div
+      class="rounded-full w-10 h-10 cursor-pointer {type === 'success'
         ? 'bg-p-suc-lgt-hgl dark:bg-p-suc-drk-hgl'
-        : ''} {type === 'error' ? 'bg-p-fal-lgt-hgl dark:bg-p-fal-drk-hgl' : ''} {type ===
-      'info'
+        : ''} {type === 'error'
+        ? 'bg-p-fal-lgt-hgl dark:bg-p-fal-drk-hgl'
+        : ''} {type === 'info'
         ? 'bg-p-inf-lgt-hgl dark:bg-p-inf-drk-hgl'
-        : ''} {type === 'warning' ? 'bg-p-war-lgt-hgl dark:bg-p-war-drk-hgl' : ''}"><MdClose /></div>
+        : ''} {type === 'warning'
+        ? 'bg-p-war-lgt-hgl dark:bg-p-war-drk-hgl'
+        : ''}"
+    >
+      <MdClose />
+    </div>
   </div>
 </div>

@@ -1,4 +1,14 @@
 {
-  "indexes": [],
+  "indexes": [{
+    "collectionGroup": "wiki-page",
+    "queryScope": "COLLECTION",
+    "fields": [{
+      "fieldPath": "category",
+      "order": "ASCENDING"
+    }, {
+      "fieldPath": "lastRevision",
+      "order": "DESCENDING"
+    }]
+  }],
   "fieldOverrides": []
 }

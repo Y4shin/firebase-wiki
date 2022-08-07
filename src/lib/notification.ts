@@ -1,4 +1,11 @@
 import {writable, type Writable} from "svelte/store";
+import {v4 as uuidv4} from "uuid";
+
+export type NotificationPayload = {
+  message: string;
+  type: "success" | "error" | "info" | "warning";
+  id?: string;
+}
 
 export type NotificationData = {
   message: string;
@@ -18,13 +25,27 @@ export const dismissNotificationIn = async (id: string, ms: number) => {
   await new Promise(resolve => setTimeout(resolve, ms + 400));
 }
 
-export const showNotification = async (data: NotificationData, dismissIn?: number) => {
+export const showNotification = async (data: NotificationPayload, dismissIn?: number) => {
+  let payload: NotificationData;
+    if (!data.id) {
+      payload = {
+        message: data.message,
+        type: data.type,
+        id: uuidv4(),
+      };
+    } else {
+      payload = data as NotificationData;
+    }
   notification.update((val) => {
-    val.push(data);
+    val.push(payload);
     return val;
   });
 
   if (dismissIn) {
-    await dismissNotificationIn(data.id, dismissIn);
+    await dismissNotificationIn(payload.id, dismissIn);
   }
+}
+
+export const dismissAll = () => {
+  notification.set([]);
 }

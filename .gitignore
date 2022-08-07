@@ -74,7 +74,7 @@ node_modules
 .env.*
 !.env.example
 
-src/lib/firebaseCredentials.ts
+src/lib/firebase/firebaseCredentials.ts
 public
 firebase_cred.json
 .firebaselocal
